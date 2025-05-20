@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: ingress-rahulsaini
+spec:
+  rules:
+  - host: "rahulsaini.shop"
+    http:
+      paths:
+      - pathType: Prefix
+        path: "/amazon"
+        backend:
+          service:
+            name: amazon-service
+            port:
+              number: 80
+      - pathType: Prefix
+        path: "/flipkart"
+        backend:
+          service:
+            name: flipkart-service
+            port:
+              number: 80
