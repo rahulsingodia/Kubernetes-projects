@@ -3,18 +3,19 @@ kind: Deployment
 metadata:
    name: flipkart-deployment
 spec:
-  replicas: 2
-  selector:
-     matchLabels:
-        app: flipkart
-  template:
-     metadata:
-        labels:
-          app: flipkart
-     spec:
-       containers:
-       - name: flipkart-container
-         image: nginx
-         ports:
-         - containerPort: 80
-~
+   replicas: 2
+   selector:
+      matchLabels:
+         app: flipkart
+   template:
+      metadata:
+         labels:
+            app: flipkart
+
+      spec:
+         containers:
+            - name: flipkart-containers
+              image: nginx
+              ports:
+              - containerPort: 80
+              - containerPort: 443
