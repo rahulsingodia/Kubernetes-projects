@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
- name: amazon-deployment
+   name: amazon-deployment
 spec:
    replicas: 2
    selector:
@@ -11,9 +11,11 @@ spec:
       metadata:
          labels:
             app: amazon
+
       spec:
          containers:
-         - name: amazon-container
-           image: nginx
-           ports:
-           - containerPort: 80
+            - name: amazon-containers
+              image: nginx
+              ports:
+              - containerPort: 80
+              - containerPort: 443
